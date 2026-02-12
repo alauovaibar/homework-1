@@ -1,29 +1,28 @@
 package com.narxoz.rpg.character;
 import com.narxoz.rpg.equipment.*;
-public class Warrior implements Character {
+
+public class Mage implements Character {
     private String name;
     private Weapon currentWeapon;
     private Armor currentArmor;
 
-    public Warrior(String name) {
+    public Mage(String name) {
         this.name = name;
     }
-    @Override
+
     public void equip(EquipmentFactory factory) {
         this.currentWeapon = factory.createWeapon();
         this.currentArmor = factory.createArmor();
-        System.out.println(name + " equips heavy armor and weapon.");
+        System.out.println(name + " equips magical gear.");
     }
 
-    @Override
     public void displayStats() {
-        System.out.println("\n=== " + name + " (Warrior) ===");
-        // Добавляем вывод оружия, если оно есть
+        System.out.println("\n=== " + name + " (Mage) ===");
         if (currentWeapon != null) currentWeapon.displayInfo();
         if (currentArmor != null) currentArmor.displayInfo();
     }
-    @Override
+
     public void useSpecialAbility() {
-        System.out.println(name + " uses BERSERKER RAGE!");
+        System.out.println(name + "FIREBALL!");
     }
 }

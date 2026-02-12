@@ -1,34 +1,4 @@
 # Factory Pattern Implementation Hints
-
-This package is where your factory implementations should live.
-
-## Factory Method Pattern (Character Creation)
-
-### The Problem
-You need to create different character types, but the client code shouldn't know about concrete classes like `Warrior`, `Mage`, or `Archer`.
-
-### Questions to Answer
-1. **Who should be responsible for creating characters?**
-   - A factory class? An abstract creator? The character itself?
-
-2. **How do you avoid if-else chains?**
-   ```java
-   // BAD - violates Open/Closed Principle:
-   if (type.equals("warrior")) {
-       return new Warrior();
-   } else if (type.equals("mage")) {
-       return new Mage();
-   }
-   ```
-
-   Think: Can inheritance help here?
-
-3. **What is the "factory method"?**
-   - It's a method that returns a Product (Character)
-   - Subclasses override it to return specific products
-
-### Possible Approaches
-
 #### Approach 1: Abstract Creator with Concrete Factories
 ```
 CharacterFactory (abstract)
